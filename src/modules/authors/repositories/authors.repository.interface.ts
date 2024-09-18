@@ -1,6 +1,6 @@
 import { IAuthorEntity } from "../index" 
 
-export interface IAuthorRepository {
+export interface IAuthorsRepository {
 	create: (params: IAuthorEntity) => Promise<IAuthorEntity>;
 	find: () => Promise<IAuthorEntity[]>;
 	findById: (id: number) => Promise<IAuthorEntity | null>;

@@ -1,4 +1,3 @@
-import { IBooksController } from './books.controller.interface';
 import "reflect-metadata";
 import { TYPES } from "../../../types";
 import { ILogger } from "../../../logger";
@@ -6,13 +5,14 @@ import { HTTPError } from "../../../errors";
 import { inject, injectable } from "inversify";
 import { BaseController } from "../../../common";
 import { Request, Response, NextFunction } from "express";
-import { IBookService, BookUpdateDto, BookCreateDto } from "../index";
+import { IBooksController } from './books.controller.interface';
+import { IBooksService, BookUpdateDto, BookCreateDto } from "../index";
 
 @injectable()
 export class BooksController extends BaseController implements IBooksController {
 	constructor(
 		@inject(TYPES.ILogger) private loggerService: ILogger,
-		@inject(TYPES.BooksService) private booksService: IBookService
+		@inject(TYPES.BooksService) private booksService: IBooksService
 	) {
 		super(loggerService);
 		this.bindRoutes([

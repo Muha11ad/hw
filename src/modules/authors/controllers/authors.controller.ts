@@ -1,4 +1,3 @@
-import { IAuthorsController } from './authors.controller.interface';
 import "reflect-metadata";
 import { TYPES } from "../../../types";
 import { ILogger } from "../../../logger";
@@ -6,13 +5,13 @@ import { HTTPError } from "../../../errors";
 import { inject, injectable } from "inversify";
 import { BaseController } from "../../../common";
 import { Request, Response, NextFunction } from "express";
-import { IAuthorService, AuthorCreateDto, AuthorUpdateDto } from "../index";
+import { IAuthorsService, AuthorCreateDto, AuthorUpdateDto,IAuthorsController } from "../index";
 
 @injectable()
 export class AuthorsController extends BaseController implements IAuthorsController {
 	constructor(
 		@inject(TYPES.ILogger) private loggerService: ILogger,
-		@inject(TYPES.AuthorsService) private authorsService: IAuthorService
+		@inject(TYPES.AuthorsService) private authorsService: IAuthorsService
 	) {
 		super(loggerService);
 		this.bindRoutes([

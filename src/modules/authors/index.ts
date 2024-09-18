@@ -11,9 +11,9 @@ export { AuthorEntity } from "./models/authors.entity";
 export { IAuthorEntity } from "./models/authors.entity.interface";
 
 // repository
-export { AuthorRepository } from "./repositories/authors.repository";
-export { IAuthorRepository } from "./repositories/authors.repository.interface";
+export { AuthorsRepository } from "./repositories/authors.repository";
+export { IAuthorsRepository } from "./repositories/authors.repository.interface";
 
 // services
 export { AuthorsService } from "./services/authors.service";
-export { IAuthorService } from "./services/authors.service.interface";
+export { IAuthorsService } from "./services/authors.service.interface";

@@ -8,17 +8,17 @@ import { ExeptionFilter, IExeptionFilter } from "./errors";
 import { Container, ContainerModule, interfaces } from "inversify";
 import {
 	BooksService,
-	IBookService,
-	BookRepository,
+	IBooksService,
+	BooksRepository,
 	BooksController,
-	IBookRepository,
+	IBooksRepository,
 	IBooksController,
 } from "./modules/books";
 import {
-	IAuthorService,
+	IAuthorsService,
 	AuthorsService,
-	AuthorRepository,
-	IAuthorRepository,
+	AuthorsRepository,
+	IAuthorsRepository,
 	IAuthorsController,
 	AuthorsController,
 } from "./modules/authors";
@@ -44,12 +44,12 @@ export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
 		.inSingletonScope();
 	bind<PrismaClient>(TYPES.PrismaClient).toConstantValue(new PrismaClient());
 
-	bind<IBookRepository>(TYPES.BooksRepository).to(BookRepository);
-	bind<IBookService>(TYPES.BooksService).to(BooksService);
+	bind<IBooksRepository>(TYPES.BooksRepository).to(BooksRepository);
+	bind<IBooksService>(TYPES.BooksService).to(BooksService);
 	bind<IBooksController>(TYPES.BooksController).to(BooksController);
 
-	bind<IAuthorRepository>(TYPES.AuthorsRepository).to(AuthorRepository);
-	bind<IAuthorService>(TYPES.AuthorsService).to(AuthorsService);
+	bind<IAuthorsRepository>(TYPES.AuthorsRepository).to(AuthorsRepository);
+	bind<IAuthorsService>(TYPES.AuthorsService).to(AuthorsService);
 	bind<IAuthorsController>(TYPES.AuthorsController).to(AuthorsController);
 
 	bind<ICategoryRepository>(TYPES.CategoriesRepository).to(CategoryRepository);

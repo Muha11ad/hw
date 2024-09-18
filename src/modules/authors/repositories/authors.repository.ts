@@ -2,10 +2,10 @@ import "reflect-metadata"
 import { TYPES } from '../../../types';
 import { inject, injectable } from 'inversify';
 import { PrismaClient } from '@prisma/client';
-import { IAuthorRepository, IAuthorEntity } from '../index';
+import { IAuthorsRepository, IAuthorEntity } from '../index';
 
 @injectable()
-export class AuthorRepository implements IAuthorRepository {
+export class AuthorsRepository implements IAuthorsRepository {
   constructor(@inject(TYPES.PrismaClient) private prisma: PrismaClient) {}
 
   async create(params: IAuthorEntity): Promise<IAuthorEntity> {

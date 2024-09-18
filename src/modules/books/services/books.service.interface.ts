@@ -1,6 +1,6 @@
 import { BookCreateDto, BookUpdateDto, IBookEntity } from "../index";
 
-export interface IBookService {
+export interface IBooksService {
 	find: () => Promise<Array<IBookEntity>>;
 	remove: (id: number) => Promise<IBookEntity | null>;
 	findById: (id: number) => Promise<IBookEntity | null>;

@@ -11,9 +11,9 @@ export { BookEntity } from './models/books.entity';
 export { IBookEntity } from './models/books.entity.interface';
 
 // repository
-export { BookRepository } from './repositories/books.repository';
-export { IBookRepository } from './repositories/books.repository.interface';
+export { BooksRepository } from './repositories/books.repository';
+export { IBooksRepository } from './repositories/books.repository.interface';
 
 // services
 export { BooksService } from './services/books.service';
-export { IBookService } from './services/books.service.interface';
+export { IBooksService } from './services/books.service.interface';

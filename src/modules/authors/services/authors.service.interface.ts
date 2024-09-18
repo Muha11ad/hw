@@ -1,6 +1,6 @@
 import { AuthorCreateDto, AuthorUpdateDto, IAuthorEntity } from "../index";
 
-export interface IAuthorService {
+export interface IAuthorsService {
 	createAuthor: (params: AuthorCreateDto) => Promise<IAuthorEntity | null>;
 	find: () => Promise<Array<IAuthorEntity>>;
 	findById: (id: number) => Promise<IAuthorEntity | null>;
